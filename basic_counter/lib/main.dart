@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 import 'constants/Colors.dart';
+import 'widgets/ColorListTile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -77,20 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
         itemBuilder: (context, position) {
           return Container(
             margin: EdgeInsets.all(10),
-            child: ListTile(
-              onTap: () => {},
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)),
-              tileColor: tdGrey,
-              title: Center(
-                child: Text((position + 1).toString(),
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: tdBlack,
-                    )),
-              ),
-            ),
+            child: ColorListTile(position: position),
           );
         },
       ),
